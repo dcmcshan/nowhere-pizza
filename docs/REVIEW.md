@@ -154,6 +154,37 @@ The old nav was just `KEYSTONE · COPPER · Message Us`. The two things customer
 actually want — the menu and a way to order — were not in it. Both now are, and
 "Order Online" is styled as the primary action.
 
+### 2.8 I published invented ingredient and dietary claims **[FIXED]**
+
+Worth recording because it was my error, not the old site's.
+
+Drafting the menu from the old site's marketing copy, I wrote descriptions for
+items I have never seen — and two of them made claims that were not mine to
+make:
+
+- **Hippy Mountain carried a "vegetarian" tag I invented.** If that pie has
+  meat on it, the site was actively telling vegetarians to order it.
+- **Bacon Bourbon, Cheese Pizza and the gluten-free pies asserted
+  "mozzarella"** — an invented dairy claim, on the page that people with
+  allergies read.
+- House Salad carried an invented "vegetarian" tag.
+
+Unverified descriptions now describe reputation and provenance — which the
+business's own marketing does support — and assert no ingredients at all.
+Dietary tags survive only where the item name already states them (the
+gluten-free line). `data/menu.json` now states this rule so it doesn't creep
+back in.
+
+The two descriptions taken verbatim from the old site (Buffalo vs Chicken,
+Hawaiian Luau) are untouched — those are the business's own words.
+
+### 2.9 The events page was hardcoded **[FIXED]**
+
+Moving open mic by an hour meant editing HTML in two places. `events.html` now
+renders from the `recurring` blocks in `data/locations.json`, sorted by
+weekday, each card carrying the correct location's phone number, with a
+`<noscript>` fallback carrying the same schedule.
+
 ---
 
 ## 3. The rest
@@ -221,8 +252,6 @@ Ordered by impact.
 - **Photography.** You have one good pizza photo and it is a Buffalo vs
   Chicken. The Bacon Bourbon and Hippy Mountain are the two pies you sell on,
   and neither has a picture.
-- **A real events feed.** Events are hardcoded. If open mic moves for a week,
-  someone has to edit HTML.
 - **Google Business Profile.** Almost certainly a bigger lever on covers than
   anything on this website. Hours, photos and menu link, on both locations.
 - **Kill the Wix subscription** — but only after cutover is confirmed. See
