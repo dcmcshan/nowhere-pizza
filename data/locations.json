@@ -1,5 +1,5 @@
 {
-  "$comment": "Hours and street addresses are deliberately null. The old Wix site published neither, and publishing guessed hours would send customers to a closed door. Until these are filled in, the site renders 'Call for today's hours' with the phone number. Fill `hours` using 24h HH:MM local (America/Denver); set a day to null for closed.",
+  "$comment": "Addresses are sourced from third-party listings (Yelp, Copper Mountain's own dining page, Restaurant Guru, Summit Chamber) and corroborated across at least two of them, with the phone numbers matching. VERIFY before printing anything. Hours found on those same aggregators are recorded under `hoursUnverified` but deliberately NOT displayed: they disagree with each other, they are the kind of thing that shifts every season in a ski town, and sending someone over a pass to a locked door is worse than saying 'call'. Move a block into `hours` once the business confirms it, and the site will start showing it.",
   "locations": [
     {
       "id": "keystone",
@@ -8,14 +8,19 @@
       "tagline": "Hidden on the lake, with the best view around.",
       "phone": "970-485-6974",
       "phoneHref": "tel:+19704856974",
-      "streetAddress": null,
+      "streetAddress": "22080 Highway 6, Unit L3",
       "addressLocality": "Keystone",
       "addressRegion": "CO",
-      "postalCode": null,
+      "postalCode": "80435",
+      "addressSource": "Yelp + Restaurantji + Apple Maps; phone matches. VERIFY unit number.",
       "landmarks": "On the edge of Keystone Lake, steps from the Convention Center and the Adventure Center.",
-      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Nowhere+Pizza+%26+Pub+Keystone+CO",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Nowhere+Pizza+%26+Pub+22080+Highway+6+Keystone+CO+80435",
       "timezone": "America/Denver",
       "hours": null,
+      "hoursUnverified": {
+        "source": "Restaurantjump, Aug 2026 — single source, not corroborated",
+        "all": "16:00–21:30 daily"
+      },
       "instagram": "https://www.instagram.com/nowhere.keystone/",
       "facebook": "https://www.facebook.com/Nowherepizza",
       "features": [
@@ -34,14 +39,21 @@
       "tagline": "Riverside stage on the 10 Mile. Open since 2023.",
       "phone": "970-475-4373",
       "phoneHref": "tel:+19704754373",
-      "streetAddress": null,
+      "streetAddress": "760 Copper Rd",
       "addressLocality": "Copper Mountain",
       "addressRegion": "CO",
-      "postalCode": null,
-      "landmarks": "Beside the 10 Mile River, with easy parking.",
-      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Nowhere+Pizza+%26+Pub+Copper+Mountain+CO",
+      "postalCode": "80443",
+      "addressSource": "Copper Mountain's own dining page + Restaurant Guru + Summit Chamber; phone matches.",
+      "landmarks": "Center Village, Snowbridge Square, adjacent to the Chapel Lot — beside the 10 Mile River, with easy parking.",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Nowhere+Pizza+%26+Pub+760+Copper+Rd+Copper+Mountain+CO+80443",
       "timezone": "America/Denver",
       "hours": null,
+      "hoursUnverified": {
+        "source": "Restaurant Guru, Aug 2026 — Friday closing earlier than Thursday looks wrong, treat with suspicion",
+        "sun_thu": "16:00–21:30",
+        "fri": "16:00–21:00",
+        "sat": "16:00–22:00"
+      },
       "instagram": "https://www.instagram.com/nowhere.copper/",
       "facebook": "https://www.facebook.com/NowhereCopper/",
       "features": [
