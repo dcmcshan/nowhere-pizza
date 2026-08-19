@@ -112,6 +112,22 @@
     if (clearBtn) clearBtn.hidden = !has;
 
     renderTotals();
+    renderOrderBar(has);
+  }
+
+  /* Docked mobile summary — see .order-bar in styles.css. */
+  function renderOrderBar(has) {
+    var bar = document.getElementById("order-bar");
+    if (!bar) return;
+
+    bar.classList.toggle("is-visible", has);
+    document.body.classList.toggle("has-order-bar", has);
+    if (!has) return;
+
+    var n = cart.count();
+    bar.querySelector(".order-bar-count").textContent =
+      n + (n === 1 ? " item" : " items");
+    bar.querySelector(".order-bar-total").textContent = money(cart.totals().total);
   }
 
   function renderTotals() {

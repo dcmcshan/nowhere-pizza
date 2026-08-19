@@ -9,6 +9,10 @@ window.NowhereMenu = (function () {
 
   var CURRENCY = new Intl.NumberFormat("en-US", { style: "currency", currency: "USD" });
 
+  /* Which store the visitor is ordering from, so phone fallbacks point at the
+     right one. Set by render() on every pass. */
+  var CURRENT_LOCATION = "keystone";
+
   function money(n) {
     return CURRENCY.format(n);
   }
@@ -105,8 +109,13 @@ window.NowhereMenu = (function () {
     var wrap = el("div", { class: "btn-row" });
 
     if (!orderable) {
+      // A dead "not orderable" label is a dead end. Until this item has a
+      // price, hand the customer the phone number for the store they picked.
+      var phone = CURRENT_LOCATION === "copper" ? "+19704754373" : "+19704856974";
+      var human = CURRENT_LOCATION === "copper" ? "970-475-4373" : "970-485-6974";
+      wrap.appendChild(el("span", { class: "tbc", text: "Phone orders only" }));
       wrap.appendChild(
-        el("span", { class: "tbc", text: "Not yet orderable online" })
+        el("a", { class: "btn btn-ghost btn-sm", href: "tel:" + phone, text: "Call " + human })
       );
       return wrap;
     }
@@ -189,6 +198,8 @@ window.NowhereMenu = (function () {
     var root = document.getElementById(opts.mount);
     if (!root) return;
     root.textContent = "";
+
+    if (opts.locationId) CURRENT_LOCATION = opts.locationId;
 
     var cats = (data.categories || [])
       .map(function (c) { return { cat: c, node: renderCategory(c, opts) }; })
