@@ -1,0 +1,81 @@
+{
+  "$comment": "Hours and street addresses are deliberately null. The old Wix site published neither, and publishing guessed hours would send customers to a closed door. Until these are filled in, the site renders 'Call for today's hours' with the phone number. Fill `hours` using 24h HH:MM local (America/Denver); set a day to null for closed.",
+  "locations": [
+    {
+      "id": "keystone",
+      "name": "Nowhere Pizza & Pub — Keystone",
+      "shortName": "Keystone",
+      "tagline": "Hidden on the lake, with the best view around.",
+      "phone": "970-485-6974",
+      "phoneHref": "tel:+19704856974",
+      "streetAddress": null,
+      "addressLocality": "Keystone",
+      "addressRegion": "CO",
+      "postalCode": null,
+      "landmarks": "On the edge of Keystone Lake, steps from the Convention Center and the Adventure Center.",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Nowhere+Pizza+%26+Pub+Keystone+CO",
+      "timezone": "America/Denver",
+      "hours": null,
+      "instagram": "https://www.instagram.com/nowhere.keystone/",
+      "facebook": "https://www.facebook.com/Nowherepizza",
+      "features": [
+        "Regulation pool table",
+        "Darts & foosball",
+        "Sports TV",
+        "Full bar",
+        "Lake views"
+      ],
+      "recurring": []
+    },
+    {
+      "id": "copper",
+      "name": "Nowhere Pizza & Pub — Copper",
+      "shortName": "Copper",
+      "tagline": "Riverside stage on the 10 Mile. Open since 2023.",
+      "phone": "970-475-4373",
+      "phoneHref": "tel:+19704754373",
+      "streetAddress": null,
+      "addressLocality": "Copper Mountain",
+      "addressRegion": "CO",
+      "postalCode": null,
+      "landmarks": "Beside the 10 Mile River, with easy parking.",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Nowhere+Pizza+%26+Pub+Copper+Mountain+CO",
+      "timezone": "America/Denver",
+      "hours": null,
+      "instagram": "https://www.instagram.com/nowhere.copper/",
+      "facebook": "https://www.facebook.com/NowhereCopper/",
+      "features": [
+        "Riverside stage",
+        "Full bar",
+        "Largest absinthe collection around",
+        "Easy parking"
+      ],
+      "recurring": [
+        {
+          "id": "open-mic",
+          "name": "Open Mic — Music, Comedy & Poetry",
+          "day": "Sunday",
+          "time": "19:00",
+          "timeLabel": "7:00 PM",
+          "description": "Step onto the best stage around. All ages. Show us your talent and entertain the crowd."
+        },
+        {
+          "id": "twisted-tuesday",
+          "name": "Twisted Tuesday Game Night",
+          "day": "Tuesday",
+          "time": null,
+          "timeLabel": "Ask for start time",
+          "description": "Table vs. Table competitions and Cards Against Everywhere."
+        },
+        {
+          "id": "happy-hour",
+          "name": "Saturday Happy Hour",
+          "day": "Saturday",
+          "time": "15:00",
+          "timeLabel": "3:00 – 5:00 PM",
+          "description": "Happy hour pricing every Saturday afternoon."
+        }
+      ]
+    }
+  ]
+}

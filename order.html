@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Order Online | Nowhere Pizza &amp; Pub</title>
+<meta name="description" content="Order pizza for pickup from Nowhere Pizza &amp; Pub at Keystone Lake or Copper Mountain, Colorado.">
+<link rel="canonical" href="https://nowhere-pizza.com/order.html">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Nowhere Pizza &amp; Pub">
+<meta property="og:title" content="Order Online | Nowhere Pizza &amp; Pub">
+<meta property="og:description" content="Order pizza for pickup from Nowhere Pizza &amp; Pub at Keystone Lake or Copper Mountain, Colorado.">
+<meta property="og:url" content="https://nowhere-pizza.com/order.html">
+<meta property="og:image" content="https://nowhere-pizza.com/assets/img/og-image.jpg">
+<meta property="og:image:alt" content="Nowhere Pizza &amp; Pub logo: a flying saucer beaming light over moonlit Colorado peaks.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#08110f">
+
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/img/og-image.jpg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Cormorant+Garamond:wght@400;500;600&family=Manrope:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/styles.css">
+
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="shell">
+    <a class="brand" href="index.html"><span class="mark" aria-hidden="true">◈</span> Nowhere</a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">☰</button>
+    <nav class="site-nav" id="site-nav" aria-label="Main">
+      <ul>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="keystone.html">Keystone</a></li>
+        <li><a href="copper.html">Copper</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="absinthe.html">Absinthe</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a class="nav-cta" href="order.html">Order Online</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <section class="section-tight shell">
+    <p class="eyebrow">Pickup</p>
+    <h1>Order Online</h1>
+    <p class="lede">Build your order, then pick it up at Keystone or Copper.</p>
+  </section>
+
+  <div class="shell">
+    <div id="order-notice"></div>
+  </div>
+
+  <div class="shell section-tight">
+    <div class="order-layout">
+      <div>
+        <div class="frame card" style="margin-bottom:1.5rem">
+          <div class="field" style="margin-bottom:0">
+            <label for="location-select">Pick up from</label>
+            <select id="location-select">
+              <option value="keystone">Nowhere Keystone — on the lake · 970-485-6974</option>
+              <option value="copper">Nowhere Copper — riverside · 970-475-4373</option>
+            </select>
+            <p class="hint">Changing location clears your order, because prices and availability differ between the two.</p>
+          </div>
+        </div>
+
+        <nav class="menu-nav" id="menu-nav" aria-label="Menu sections"></nav>
+
+        <div class="notice" id="price-notice" hidden>
+          <p><strong>Items marked <span class="tbc">Price TBC</span> can't be ordered online yet</strong> — they're on the menu, but we haven't published a price. Give us a ring and we'll sort you out.</p>
+        </div>
+
+        <div id="menu-root" aria-busy="true">
+          <p class="lede">Loading the menu…</p>
+        </div>
+      </div>
+
+      <aside class="frame cart-panel" aria-labelledby="cart-h">
+        <h2 id="cart-h" style="font-size:1.2rem">Your Order</h2>
+
+        <p class="status-msg" id="cart-status" role="status" aria-live="polite"></p>
+
+        <ul class="cart-lines" id="cart-lines"></ul>
+        <p class="cart-empty" id="cart-empty">Nothing here yet.</p>
+
+        <ul class="cart-totals" id="cart-totals"></ul>
+
+        <form id="checkout-form" novalidate hidden>
+          <div class="field">
+            <label for="cust-name">Name</label>
+            <input id="cust-name" name="name" type="text" autocomplete="name" required>
+          </div>
+          <div class="field">
+            <label for="cust-phone">Mobile number</label>
+            <input id="cust-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" required>
+            <p class="hint">So we can call you when it's out of the oven.</p>
+          </div>
+          <div class="field">
+            <label for="cust-notes">Notes for the kitchen <span style="text-transform:none;font-weight:400">(optional)</span></label>
+            <textarea id="cust-notes" name="notes" rows="3"></textarea>
+          </div>
+
+          <p class="status-msg" id="checkout-status" role="status" aria-live="polite"></p>
+
+          <button class="btn btn-primary" id="checkout-btn" type="submit" style="width:100%">Place order</button>
+          <p class="hint" style="margin-top:0.75rem">Payment is taken at the counter when you collect.</p>
+        </form>
+
+        <div class="btn-row">
+          <button class="btn btn-ghost btn-sm" id="clear-cart" type="button" hidden>Clear order</button>
+        </div>
+      </aside>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="shell">
+    <div class="footer-grid">
+      <div>
+        <h3>Nowhere Pizza &amp; Pub</h3>
+        <p>Two hidden addresses in Summit County, Colorado. Pizza, pub, stage, and the Green Fairy.</p>
+      </div>
+      <div>
+        <h3>Keystone</h3>
+        <ul>
+          <li><a href="tel:+19704856974">970-485-6974</a></li>
+          <li><a href="keystone.html">Location &amp; game room</a></li>
+          <li><a href="https://www.instagram.com/nowhere.keystone/" rel="noopener">Instagram</a></li>
+          <li><a href="https://www.facebook.com/Nowherepizza" rel="noopener">Facebook</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Copper</h3>
+        <ul>
+          <li><a href="tel:+19704754373">970-475-4373</a></li>
+          <li><a href="copper.html">Location &amp; stage</a></li>
+          <li><a href="https://www.instagram.com/nowhere.copper/" rel="noopener">Instagram</a></li>
+          <li><a href="https://www.facebook.com/NowhereCopper/" rel="noopener">Facebook</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>More</h3>
+        <ul>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="order.html">Order online</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="careers.html">Work at Nowhere</a></li>
+          <li><a href="privacy.html">Privacy policy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; <span data-year>2026</span> Nowhere Pizza &amp; Pub</span>
+      <span>Please drink responsibly. Must be 21+ for bar service.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/site.js" defer></script>
+<script src="assets/js/config.js" defer></script>
+<script src="assets/js/genius.js" defer></script>
+<script src="assets/js/menu.js" defer></script>
+<script src="assets/js/cart.js" defer></script>
+<script src="assets/js/order-page.js" defer></script>
+</body>
+</html>

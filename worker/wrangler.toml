@@ -1,0 +1,21 @@
+name = "nowhere-order"
+main = "src/index.js"
+compatibility_date = "2026-01-01"
+
+# NO SECRETS IN THIS FILE. It is committed to a public repo.
+# Set secrets with:  wrangler secret put GENIUS_API_KEY   (etc.)
+
+# Idempotency + rate-limit storage. Create with:
+#   wrangler kv namespace create ORDERS
+#   wrangler kv namespace create RATELIMIT
+# then paste the returned ids below and uncomment.
+# [[kv_namespaces]]
+# binding = "ORDERS"
+# id = "<paste-id>"
+#
+# [[kv_namespaces]]
+# binding = "RATELIMIT"
+# id = "<paste-id>"
+
+[observability]
+enabled = true

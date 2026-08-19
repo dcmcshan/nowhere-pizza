@@ -1,0 +1,244 @@
+{
+  "$comment": "SOURCE OF TRUTH for the website menu. Every item with \"price\": null renders as 'Price TBC' on the site — search this file for `null` to find what still needs real numbers. Items flagged \"needsReview\": true have a description drafted from the old site's marketing copy rather than confirmed by the kitchen. Once Genius POS credentials exist, `npm run sync:menu` in worker/ can repopulate `posId` and prices from the POS item catalog (see docs/GENIUS-POS.md).",
+  "version": "2026-08-19",
+  "currency": "USD",
+  "priceStatus": "provisional",
+  "locations": [
+    {
+      "id": "keystone",
+      "name": "Nowhere Keystone",
+      "phone": "970-485-6974",
+      "instagram": "https://www.instagram.com/nowhere.keystone/",
+      "facebook": "https://www.facebook.com/Nowherepizza"
+    },
+    {
+      "id": "copper",
+      "name": "Nowhere Copper",
+      "phone": "970-475-4373",
+      "instagram": "https://www.instagram.com/nowhere.copper/",
+      "facebook": "https://www.facebook.com/NowhereCopper/"
+    }
+  ],
+  "sizes": {
+    "$comment": "Confirm actual pizza diameters with the kitchen — inches below are placeholders.",
+    "sm": "Small",
+    "lg": "Large"
+  },
+  "categories": [
+    {
+      "id": "signature-pizzas",
+      "name": "Signature Pizzas",
+      "note": "Hand-stretched, blistered crust. The ones people drive up the pass for.",
+      "items": [
+        {
+          "id": "bacon-bourbon",
+          "name": "Bacon Bourbon",
+          "description": "The house favorite — bourbon-glazed bacon over mozzarella with a sweet-and-smoky finish.",
+          "tags": ["signature"],
+          "needsReview": true,
+          "availableAt": ["keystone", "copper"],
+          "posId": null,
+          "variants": [
+            { "id": "sm", "name": "Small", "price": null },
+            { "id": "lg", "name": "Large", "price": null }
+          ]
+        },
+        {
+          "id": "hippy-mountain",
+          "name": "Hippy Mountain",
+          "description": "The cult pick — a loaded garden pie that has quietly built a following of its own.",
+          "tags": ["signature", "vegetarian"],
+          "needsReview": true,
+          "availableAt": ["keystone", "copper"],
+          "posId": null,
+          "variants": [
+            { "id": "sm", "name": "Small", "price": null },
+            { "id": "lg", "name": "Large", "price": null }
+          ]
+        },
+        {
+          "id": "buffalo-vs-chicken",
+          "name": "Buffalo vs Chicken",
+          "description": "A zesty twist on a classic: ranch base, mozzarella, buffalo chicken, red onion, and jalapeños for the perfect mix of heat and flavor.",
+          "tags": ["spicy"],
+          "needsReview": false,
+          "availableAt": ["keystone", "copper"],
+          "posId": null,
+          "variants": [
+            { "id": "sm", "name": "Small", "price": 18.0 },
+            { "id": "lg", "name": "Large", "price": 29.0 }
+          ]
+        },
+        {
+          "id": "hawaiian-luau",
+          "name": "Hawaiian Luau",
+          "description": "A sweet and savory treat featuring marinara, mozzarella, Canadian bacon, pineapple, and a drizzle of sweet chili sauce. A tropical twist on the classic.",
+          "needsReview": false,
+          "availableAt": ["keystone", "copper"],
+          "posId": null,
+          "variants": [
+            { "id": "sm", "name": "Small", "price": null },
+            { "id": "lg", "name": "Large", "price": null }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "build-your-own",
+      "name": "Build Your Own",
+      "note": "Start with cheese, then take it wherever you want to go.",
+      "items": [
+        {
+          "id": "cheese-pizza",
+          "name": "Cheese Pizza",
+          "description": "House red sauce and mozzarella on our signature crust.",
+          "needsReview": true,
+          "availableAt": ["keystone", "copper"],
+          "posId": null,
+          "variants": [
+            { "id": "sm", "name": "Small", "price": null },
+            { "id": "lg", "name": "Large", "price": null }
+          ],
+          "modifierGroups": ["crust", "toppings"]
+        }
+      ]
+    },
+    {
+      "id": "freedom",
+      "name": "The Freedom Menu",
+      "note": "Our gluten-free program — billed on the old site as the best gluten-free crust around. Prepared with care, in a kitchen that also handles wheat.",
+      "items": [
+        {
+          "id": "gf-cheese",
+          "name": "Gluten-Free Cheese Pizza",
+          "description": "Our gluten-free crust with house red sauce and mozzarella.",
+          "tags": ["gluten-free"],
+          "needsReview": true,
+          "availableAt": ["keystone", "copper"],
+          "posId": null,
+          "variants": [{ "id": "sm", "name": "Small", "price": null }],
+          "modifierGroups": ["toppings"]
+        },
+        {
+          "id": "gf-signature",
+          "name": "Any Signature, Gluten-Free",
+          "description": "Any signature pie built on our gluten-free crust.",
+          "tags": ["gluten-free"],
+          "needsReview": true,
+          "availableAt": ["keystone", "copper"],
+          "posId": null,
+          "variants": [{ "id": "sm", "name": "Small", "price": null }]
+        }
+      ]
+    },
+    {
+      "id": "starters",
+      "name": "Wings & Starters",
+      "note": "Built for sharing across a pool table.",
+      "items": [
+        {
+          "id": "wings",
+          "name": "Wings",
+          "description": "Tossed in the sauce of your choice.",
+          "needsReview": true,
+          "availableAt": ["keystone", "copper"],
+          "posId": null,
+          "variants": [
+            { "id": "6", "name": "6 pc", "price": null },
+            { "id": "12", "name": "12 pc", "price": null }
+          ],
+          "modifierGroups": ["wing-sauce"]
+        },
+        {
+          "id": "house-salad",
+          "name": "House Salad",
+          "description": "Crisp greens with your choice of dressing.",
+          "tags": ["vegetarian"],
+          "needsReview": true,
+          "availableAt": ["keystone", "copper"],
+          "posId": null,
+          "variants": [
+            { "id": "sm", "name": "Side", "price": null },
+            { "id": "lg", "name": "Full", "price": null }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "bar",
+      "name": "The Pub",
+      "note": "Legendary mules, craft beer, and the largest absinthe collection in Summit County — the real kind.",
+      "orderableOnline": false,
+      "items": [
+        {
+          "id": "mule",
+          "name": "Legendary Mules",
+          "description": "The drink Nowhere is known for, in a proper copper mug.",
+          "needsReview": true,
+          "availableAt": ["keystone", "copper"],
+          "posId": null,
+          "variants": [{ "id": "std", "name": "Each", "price": null }]
+        },
+        {
+          "id": "craft-beer",
+          "name": "Craft Beer",
+          "description": "Rotating Colorado taps. Ask what's pouring.",
+          "needsReview": true,
+          "availableAt": ["keystone", "copper"],
+          "posId": null,
+          "variants": [{ "id": "std", "name": "Pint", "price": null }]
+        },
+        {
+          "id": "absinthe",
+          "name": "Absinthe Service",
+          "description": "Served the old way — slotted spoon, sugar, iced water, patience. Ask to see the collection.",
+          "needsReview": true,
+          "availableAt": ["keystone", "copper"],
+          "posId": null,
+          "variants": [{ "id": "std", "name": "Pour", "price": null }]
+        }
+      ]
+    }
+  ],
+  "modifierGroups": [
+    {
+      "id": "crust",
+      "name": "Crust",
+      "min": 1,
+      "max": 1,
+      "options": [
+        { "id": "regular", "name": "Signature", "price": 0 },
+        { "id": "gf", "name": "Gluten-Free", "price": null }
+      ]
+    },
+    {
+      "id": "toppings",
+      "name": "Toppings",
+      "min": 0,
+      "max": 10,
+      "options": [
+        { "id": "pepperoni", "name": "Pepperoni", "price": null },
+        { "id": "sausage", "name": "Sausage", "price": null },
+        { "id": "bacon", "name": "Bacon", "price": null },
+        { "id": "mushroom", "name": "Mushroom", "price": null },
+        { "id": "red-onion", "name": "Red Onion", "price": null },
+        { "id": "green-pepper", "name": "Green Pepper", "price": null },
+        { "id": "jalapeno", "name": "Jalapeño", "price": null },
+        { "id": "pineapple", "name": "Pineapple", "price": null },
+        { "id": "olive", "name": "Black Olive", "price": null },
+        { "id": "extra-cheese", "name": "Extra Cheese", "price": null }
+      ]
+    },
+    {
+      "id": "wing-sauce",
+      "name": "Wing Sauce",
+      "min": 1,
+      "max": 1,
+      "options": [
+        { "id": "buffalo", "name": "Buffalo", "price": 0 },
+        { "id": "bbq", "name": "BBQ", "price": 0 },
+        { "id": "dry-rub", "name": "Dry Rub", "price": 0 }
+      ]
+    }
+  ]
+}
