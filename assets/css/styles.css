@@ -336,15 +336,20 @@ p { margin: 0 0 1.1em; max-width: 68ch; }
   width: 100%;
   height: 100%;
   object-fit: cover;
-  opacity: 0.55;
+  /* Anchor low so the lit peaks stay in frame as the hero grows taller. */
+  object-position: 50% 35%;
+  opacity: 0.9;
 }
+/* Scrim: dark enough to hold text contrast, light enough that the artwork
+   is still visibly there. Weighted to the top and bottom edges so the
+   mid-band where the peaks sit stays open. */
 .hero::after {
   content: "";
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(circle at 50% 45%, transparent 10%, rgba(5, 11, 10, 0.72) 70%),
-    linear-gradient(180deg, rgba(5, 11, 10, 0.55), rgba(5, 11, 10, 0.9));
+    radial-gradient(ellipse 70% 55% at 50% 50%, rgba(5, 11, 10, 0.82) 0%, rgba(5, 11, 10, 0.45) 60%, transparent 100%),
+    linear-gradient(180deg, rgba(5, 11, 10, 0.75) 0%, rgba(5, 11, 10, 0.25) 45%, rgba(5, 11, 10, 0.85) 100%);
 }
 .hero-copy { position: relative; z-index: 1; padding-block: 3.5rem; }
 .hero-copy p { margin-inline: auto; }
