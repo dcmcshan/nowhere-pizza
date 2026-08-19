@@ -56,34 +56,10 @@
     <p class="lede">The riverside stage at Copper runs most nights of the week. All ages unless we say otherwise.</p>
   </section>
 
-  <section class="section-tight shell">
-    <div class="grid grid-2">
-      <article class="frame card">
-        <p class="section-label">Every Sunday · 7:00 PM · Copper</p>
-        <h2>Open Mic — Music, Comedy &amp; Poetry</h2>
-        <p>Step onto the best stage around. Show us your talent and entertain the crowd at Copper Mountain's favorite pub. All ages.</p>
-        <div class="btn-row"><a class="btn btn-ghost btn-sm" href="tel:+19704754373">Ask about a slot</a></div>
-      </article>
-
-      <article class="frame card">
-        <p class="section-label">Every Tuesday · Copper</p>
-        <h2>Twisted Tuesday Game Night</h2>
-        <p>Table vs. Table competitions and Cards Against Everywhere. Call for tonight's start time.</p>
-        <div class="btn-row"><a class="btn btn-ghost btn-sm" href="tel:+19704754373">Call Copper</a></div>
-      </article>
-
-      <article class="frame card">
-        <p class="section-label">Every Saturday · 3–5 PM · Copper</p>
-        <h2>Happy Hour</h2>
-        <p>Happy hour pricing every Saturday afternoon, riverside.</p>
-      </article>
-
-      <article class="frame card">
-        <p class="section-label">Keystone</p>
-        <h2>The Green Fairy Game Lounge</h2>
-        <p>Pool, darts, foosball and sports TV on the lake — open whenever we are, and available for private parties.</p>
-        <div class="btn-row"><a class="btn btn-ghost btn-sm" href="keystone.html">Keystone details</a></div>
-      </article>
+  <section class="section-tight shell" aria-labelledby="events-h">
+    <h2 id="events-h" class="visually-hidden">Recurring events</h2>
+    <div id="events-root" aria-busy="true">
+      <p class="lede">Loading what's on…</p>
     </div>
   </section>
 
@@ -92,6 +68,16 @@
       <p><strong>Booking the stage or a private party?</strong> Call Copper at <a href="tel:+19704754373">970-475-4373</a> or Keystone at <a href="tel:+19704856974">970-485-6974</a>, or <a href="contact.html">send us a message</a>.</p>
     </div>
   </section>
+  <noscript>
+    <div class="shell section-tight">
+      <div class="notice">
+        <p><strong>Open Mic</strong> — Sundays 7:00 PM, Copper. <strong>Twisted Tuesday
+        Game Night</strong> — Tuesdays, Copper. <strong>Happy Hour</strong> — Saturdays
+        3–5 PM, Copper. <strong>The Green Fairy Game Lounge</strong> — Keystone, open
+        whenever we are.</p>
+      </div>
+    </div>
+  </noscript>
 </main>
 
 <footer class="site-footer">
@@ -138,6 +124,7 @@
 </footer>
 
 <script src="assets/js/site.js" defer></script>
+<script src="assets/js/events-page.js" defer></script>
 
 </body>
 </html>

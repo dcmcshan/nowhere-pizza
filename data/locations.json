@@ -30,7 +30,16 @@
         "Full bar",
         "Lake views"
       ],
-      "recurring": []
+      "recurring": [
+        {
+          "id": "game-lounge",
+          "name": "The Green Fairy Game Lounge",
+          "day": null,
+          "time": null,
+          "timeLabel": "Open whenever we are",
+          "description": "Pool, darts, foosball and sports TV on the lake. Available for private parties."
+        }
+      ]
     },
     {
       "id": "copper",
