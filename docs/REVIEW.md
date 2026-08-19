@@ -98,18 +98,36 @@ question a restaurant website is asked, and yours never answered it.
 mountain pass to a locked door, which is worse than no hours. Every location
 currently renders *"Call for today's hours."*
 
-To fix: fill in `hours` in `data/locations.json` (24h, `America/Denver`). The
-structure is already in place, including seasonal null days.
+I did find hours on aggregators, and did **not** publish them, because they do
+not survive scrutiny:
 
-### 2.3 No street addresses **[NEEDS YOU]**
+- Keystone: "4:00pm–9:30pm daily" — single source, uncorroborated.
+- Copper: Sun–Thu 4–9:30, **Fri 4–9**, Sat 4–10 — a Friday that closes
+  *earlier* than Thursday is almost certainly wrong.
 
-Same story — "on the lake" and "beside the 10 Mile River" are charming and
-useless to a car. Map links currently fall back to a Google Maps *search* for
-the business name, which mostly works but is not a pin.
+Ski-town hours also move seasonally, and these were captured in August. They
+are recorded under `hoursUnverified` in `data/locations.json` for you to
+check against. Move a block into `hours` once confirmed and the site starts
+displaying it.
 
-Fill `streetAddress` / `postalCode` in `data/locations.json`; the JSON-LD in
-each page picks them up automatically and that is what feeds Google's local
-results.
+### 2.3 No street addresses **[FIXED — verify]**
+
+"On the lake" and "beside the 10 Mile River" are charming and useless to a car.
+
+Found and added, corroborated across at least two independent sources each,
+with phone numbers matching yours:
+
+| | |
+|---|---|
+| **Keystone** | 22080 Highway 6, Unit L3, Keystone, CO 80435 |
+| **Copper** | 760 Copper Rd, Copper Mountain, CO 80443 — Center Village, Snowbridge Square, by the Chapel Lot |
+
+Sources: Yelp, Restaurantji and Apple Maps for Keystone; Copper Mountain's own
+dining page, Restaurant Guru and the Summit Chamber for Copper.
+
+These are now on the home, location and contact pages, in the `Restaurant`
+JSON-LD, and behind the map links. **Please confirm the Keystone unit number
+(L3) — it is the one detail with a single strong source.**
 
 ### 2.4 The mobile cart had no feedback **[FIXED]**
 
