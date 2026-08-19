@@ -1,4 +1,12 @@
+# PREVIEW STATE — the site is on dcmcshan.github.io until nowhere-pizza.com
+# cuts over. Indexing is off so the preview can't compete with the live site
+# or get indexed with provisional prices. Replace this whole file at cutover
+# with the block below it. See docs/CUTOVER.md.
 User-agent: *
-Allow: /
+Disallow: /
 
-Sitemap: https://nowhere-pizza.com/sitemap.xml
+# AT CUTOVER, use this instead:
+# User-agent: *
+# Allow: /
+#
+# Sitemap: https://nowhere-pizza.com/sitemap.xml

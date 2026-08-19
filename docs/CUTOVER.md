@@ -38,6 +38,28 @@ old Wix site until DNS moves.
 5. **Check redirects.** Both `www.` and the apex should resolve, and the old
    Wix URLs should not 404 — see the redirect map below.
 
+
+## Turn indexing back on
+
+The preview is deliberately hidden from search engines so it can't be indexed
+with provisional prices or compete with the live Wix site as duplicate
+content. Two things to undo at cutover:
+
+1. Remove the `PREVIEW-NOINDEX` block from the `<head>` of every page:
+
+   ```bash
+   perl -0pi -e 's{<!-- PREVIEW-NOINDEX.*?\n<meta name="robots" content="noindex, nofollow">\n}{}s' *.html
+   ```
+
+   (`404.html` keeps its own `noindex, follow` — that one is correct and
+   should stay.)
+
+2. Replace `robots.txt` with the allow-all block commented at the bottom of
+   that file.
+
+Canonical URLs and Open Graph URLs already point at `nowhere-pizza.com`, so
+they need no change — they simply start resolving once DNS moves.
+
 ## Old Wix URLs to redirect
 
 The old site's pages don't all map 1:1. GitHub Pages can't issue server-side

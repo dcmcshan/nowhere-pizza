@@ -26,7 +26,7 @@
   if (!base) {
     statusEl.className = "status-msg is-error";
     statusEl.textContent =
-      "This form isn't connected yet — please call Keystone on 970-485-6974 or Copper on 970-475-4373.";
+      "This form isn't connected yet — please call Keystone at 970-485-6974 or Copper at 970-475-4373.";
   }
 
   form.addEventListener("submit", function (e) {
@@ -42,7 +42,7 @@
 
     if (!base) {
       return fail(
-        "This form isn't connected yet — please call Keystone on 970-485-6974 or Copper on 970-475-4373.",
+        "This form isn't connected yet — please call Keystone at 970-485-6974 or Copper at 970-475-4373.",
         null
       );
     }
@@ -73,7 +73,7 @@
       .catch(function () {
         statusEl.className = "status-msg is-error";
         statusEl.textContent =
-          "We couldn't send that. Please call Keystone on 970-485-6974 or Copper on 970-475-4373.";
+          "We couldn't send that. Please call Keystone at 970-485-6974 or Copper at 970-475-4373.";
       })
       .finally(function () {
         btn.disabled = false;
